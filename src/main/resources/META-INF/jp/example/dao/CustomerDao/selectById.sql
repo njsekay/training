@@ -1,0 +1,1 @@
+SELECT /*%expand*/* FROM customers WHERE id = /* id */0
