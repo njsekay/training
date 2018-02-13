@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"></link>
+
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</head>
+<body>
+	<h3>ユーザ情報の登録</h3>
+	<form action="#" th:action="@{/users}" th:object="${userForm}"
+		method="post">
+		<p>
+			名前: <input type="text" th:field="*{name}" />
+		</p>
+		<p>
+			メールアドレス: <input type="text" th:field="*{email}" />
+		</p>
+		<p>
+			パスワード: <input type="text" th:field="*{password}" />
+		</p>
+		<p>
+			備考: <input type="text" th:field="*{remarks}" />
+		</p>
+		<p>
+			<input type="submit" value="登録" class="btn"/> <input type="reset" value="リセット" class="btn"/>
+			<input type="button" value="戻る" onclick="history.back()" class="btn"/>
+		</p>
+	</form>
+</body>
+</html>

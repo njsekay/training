@@ -1,0 +1,4 @@
+<factorypath>
+    <factorypathentry kind="PLUGIN" id="org.eclipse.jst.ws.annotations.core" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="C:\Users\njsekay\.gradle\caches\modules-2\files-2.1\org.seasar.doma\doma\2.16.1\da59e6a74d043e684abd14da4af3008927c4fca1\doma-2.16.1.jar" enabled="true" runInBatchMode="false"/>
+</factorypath>

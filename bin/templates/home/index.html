@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"></link>
+
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</head>
+<body>
+	<h3>ユーザ情報一覧</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>名前</th>
+				<th>メールアドレス</th>
+				<th>パスワード</th>
+				<th>備考</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user : ${users}">
+				<td><a href="/users/${user.id}"
+					th:href="@{/users/{id}(id=${user.id})}" th:text="${user.id}">1</a></td>
+				<td th:text="${user.name}">test1</td>
+				<td th:text="${user.email}">test1</td>
+				<td th:text="${user.password}">test1</td>
+				<td th:text="${user.remarks}">test1</td>
+				<td>
+					<form th:action="@{/users/{id}(id=${user.id})}" th:method="delete">
+						<a class="btn cyan" href="/users/${user.id}/edit"
+							th:href="@{/users/{id}/edit(id=${user.id})}" th:text="更新">1</a>
+                        <input class="btn red" type="submit" value="削除" onclick="return confirm('削除しますか？');"/>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br />
+	<form action="#" th:action="@{/users/new}" th:object="${indexForm}"
+		method="get">
+		<button type="submit" name="action" value="save"
+			class="btn">新規ユーザー</button>
+	</form>
+</body>
+</html>
